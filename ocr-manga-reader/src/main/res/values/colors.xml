@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="kiwi_green">#ff99cc00</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="ocr_btn_text_enabled">#FFF3F3F3</color>
+    <color name="ocr_btn_text_disabled">#FF7F7F7F</color>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <net.robotmedia.acv.ui.settings.AnkiDeckListPreference
+        android:dialogTitle="@string/preference_anki_deck_title"
+        android:key="anki_deck"
+        android:summary="@string/preference_anki_deck_summary"
+        android:title="@string/preference_anki_deck_title" />
+
+    <net.robotmedia.acv.ui.settings.AnkiDeckListPreference
+        android:dialogTitle="@string/preference_anki_model_title"
+        android:key="anki_model"
+        android:summary="@string/preference_anki_model_summary"
+        android:title="@string/preference_anki_model_title" />
+
+</PreferenceScreen>

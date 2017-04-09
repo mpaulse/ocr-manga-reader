@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Copyright 2009 Robot Media SL
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cb4960.ocrmr"
+    android:installLocation="auto"
+    android:largeHeap="true"
+    android:versionCode="390000"
+    android:versionName="6.1.mp-1">
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="22" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="net.robotmedia.acv.ACVApplication"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name">
+        <activity
+            android:name="net.robotmedia.acv.ui.ComicViewerActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="*" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern=".*\\.cbz" />
+                <data android:pathPattern=".*\\.cbr" />
+                <data android:pathPattern=".*\\.acv" />
+                <data android:pathPattern=".*\\.zip" />
+                <data android:pathPattern=".*\\.rar" />
+                <data android:pathPattern=".*\\.jpg" />
+                <data android:pathPattern=".*\\.png" />
+                <data android:pathPattern=".*\\.bmp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.BrowseActivity"
+            android:label="@string/activity_browse_label"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.SDBrowserActivity"
+            android:label="@string/activity_sd_browser_label"
+            android:screenOrientation="behind"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.SDEpwingBrowerActivity"
+            android:label="@string/activity_sd_browser_label"
+            android:screenOrientation="behind"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.SDTextBrowserActivity"
+            android:label="@string/activity_sd_browser_label"
+            android:screenOrientation="behind"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.settings.mobile.SettingsActivityMobile"
+            android:label="@string/activity_settings_label"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.settings.tablet.SettingsActivityTablet"
+            android:label="@string/activity_settings_label"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.settings.mobile.VisualSettingsActivity"
+            android:label="@string/category_visual_title"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.settings.mobile.ControlSettingsActivity"
+            android:label="@string/category_controls_title"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.settings.mobile.StorageSettingsActivity"
+            android:label="@string/category_memory_title"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.settings.mobile.AboutSettingsActivity"
+            android:label="@string/category_about_title"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.settings.mobile.AdvancedSettingsActivity"
+            android:label="@string/category_about_title"></activity>
+        <activity
+            android:name="net.robotmedia.acv.ui.settings.mobile.OcrSettingsActivity"
+            android:label="@string/ocr_prefs_title"></activity>
+    </application>
+
+</manifest>

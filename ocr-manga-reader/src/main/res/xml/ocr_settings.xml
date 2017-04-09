@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2013-2014 Christopher Brochtrup
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceScreen
+        android:summary="@string/ocr_prefs_color_group_summary"
+        android:title="@string/ocr_prefs_color_group_title" >
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="true"
+            android:defaultValue="0x8F000000"
+            android:key="ocr_settings_dict_background_color"
+            android:summary="@string/ocr_prefs_dict_background_color_summary"
+            android:title="@string/ocr_prefs_dict_background_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFCCC5FF"
+            android:key="ocr_settings_dict_expression_color"
+            android:summary="@string/ocr_prefs_dict_expression_color_summary"
+            android:title="@string/ocr_prefs_dict_expression_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFF90EE90"
+            android:key="ocr_settings_dict_reading_color"
+            android:summary="@string/ocr_prefs_dict_reading_color_summary"
+            android:title="@string/ocr_prefs_dict_reading_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFFFFFFF"
+            android:key="ocr_settings_dict_definition_color"
+            android:summary="@string/ocr_prefs_dict_definition_color_summary"
+            android:title="@string/ocr_prefs_dict_definition_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFD3D3D3"
+            android:key="ocr_settings_dict_conjugation_color"
+            android:summary="@string/ocr_prefs_dict_conjugation_color_summary"
+            android:title="@string/ocr_prefs_dict_conjugation_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFFFFFFF"
+            android:key="ocr_settings_sub_def_color"
+            android:summary="@string/ocr_prefs_sub_def_color_summary"
+            android:title="@string/ocr_prefs_sub_def_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFFFFFFF"
+            android:key="ocr_settings_example_prepend_color"
+            android:summary="@string/ocr_prefs_example_prepend_color_summary"
+            android:title="@string/ocr_prefs_example_prepend_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFFFFFFF"
+            android:key="ocr_settings_example_jap_color"
+            android:summary="@string/ocr_prefs_example_jap_color_summary"
+            android:title="@string/ocr_prefs_example_jap_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFFFFFFF"
+            android:key="ocr_settings_example_eng_color"
+            android:summary="@string/ocr_prefs_example_eng_color_summary"
+            android:title="@string/ocr_prefs_example_eng_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFD3D3D3"
+            android:key="ocr_settings_dict_name_color"
+            android:summary="@string/ocr_prefs_dict_name_color_summary"
+            android:title="@string/ocr_prefs_dict_name_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFCCCCCC"
+            android:key="ocr_settings_dict_separator_color"
+            android:summary="@string/ocr_prefs_dict_separator_color_summary"
+            android:title="@string/ocr_prefs_dict_separator_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFFFFF00"
+            android:key="ocr_settings_dict_ocr_text_color"
+            android:summary="@string/ocr_prefs_dict_ocr_text_color_summary"
+            android:title="@string/ocr_prefs_dict_ocr_text_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="true"
+            android:defaultValue="0x660080FF"
+            android:key="ocr_settings_capture_box_color"
+            android:summary="@string/ocr_prefs_capture_box_color_summary"
+            android:title="@string/ocr_prefs_capture_box_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="true"
+            android:defaultValue="0x7FFF0000"
+            android:key="ocr_settings_bounding_box_color"
+            android:summary="@string/ocr_prefs_show_bounding_boxes_color_summary"
+            android:title="@string/ocr_prefs_show_bounding_boxes_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFF00B300"
+            android:key="ocr_settings_freq_very_common_color"
+            android:summary="@string/ocr_prefs_freq_very_common_color_summary"
+            android:title="@string/ocr_prefs_freq_very_common_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFE5ED01"
+            android:key="ocr_settings_freq_common_color"
+            android:summary="@string/ocr_prefs_freq_common_color_summary"
+            android:title="@string/ocr_prefs_freq_common_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFE78911"
+            android:key="ocr_settings_freq_uncommon_color"
+            android:summary="@string/ocr_prefs_freq_uncommon_summary"
+            android:title="@string/ocr_prefs_freq_uncommon_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFE28CBB"
+            android:key="ocr_settings_freq_rare_color"
+            android:summary="@string/ocr_prefs_freq_rare_color_summary"
+            android:title="@string/ocr_prefs_freq_rare_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFF467196"
+            android:key="ocr_settings_word_highlight_color"
+            android:summary="@string/ocr_prefs_word_highlight_color_summary"
+            android:title="@string/ocr_prefs_word_highlight_color_title" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            alphaSlider="false"
+            android:defaultValue="0xFFD3D3D3"
+            android:key="ocr_settings_known_word_color"
+            android:summary="@string/ocr_prefs_known_word_color_summary"
+            android:title="@string/ocr_prefs_known_word_color_title" />
+    </PreferenceScreen>
+    <!-- End color group -->
+
+    <PreferenceScreen
+        android:summary="@string/ocr_prefs_layout_group_summary"
+        android:title="@string/ocr_prefs_layout_group_title" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="ocr_settings_show_bounding_boxes"
+            android:summary="@string/ocr_prefs_show_bounding_boxes_summary"
+            android:title="@string/ocr_prefs_show_bounding_boxes_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ocr_settings_simplified_layout_portrait"
+            android:summary="@string/ocr_prefs_simplified_layout_portrait_summary"
+            android:title="@string/ocr_prefs_simplified_layout_portrait_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ocr_settings_simplified_layout_landscape"
+            android:summary="@string/ocr_prefs_simplified_layout_landscape_summary"
+            android:title="@string/ocr_prefs_simplified_layout_landscape_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ocr_settings_large_nudge_buttons"
+            android:summary="@string/ocr_prefs_large_nudge_buttons_summary"
+            android:title="@string/ocr_prefs_large_nudge_buttons_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="ocr_settings_show_text_orientation_button"
+            android:summary="@string/ocr_prefs_show_text_orientation_button_summary"
+            android:title="@string/ocr_prefs_show_text_orientation_button_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ocr_settings_show_nudge_buttons"
+            android:summary="@string/ocr_prefs_show_nudge_buttons_summary"
+            android:title="@string/ocr_prefs_show_nudge_buttons_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="ocr_settings_show_send_button"
+            android:summary="@string/ocr_prefs_show_send_button_summary"
+            android:title="@string/ocr_prefs_show_send_button_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="ocr_settings_show_lookup_next_button"
+            android:summary="@string/ocr_prefs_show_lookup_next_button_summary"
+            android:title="@string/ocr_prefs_show_lookup_next_button_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="ocr_settings_show_lookup_prev_button"
+            android:summary="@string/ocr_prefs_show_lookup_prev_button_summary"
+            android:title="@string/ocr_prefs_show_lookup_prev_button_title" />
+    </PreferenceScreen>
+    <!-- End Layout group -->
+
+    <PreferenceScreen
+        android:summary="@string/ocr_prefs_edict_group_summary"
+        android:title="@string/ocr_prefs_edict_group_title" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="ocr_settings_edict_compact_definitions"
+            android:summary="@string/ocr_prefs_compact_definitions_summary"
+            android:title="@string/ocr_prefs_compact_definitions_title" />
+    </PreferenceScreen>
+    <!-- End EDICT group -->
+
+    <PreferenceScreen
+        android:summary="@string/ocr_prefs_epwing_group_summary"
+        android:title="@string/ocr_prefs_epwing_group_title" >
+        <PreferenceScreen
+            android:summary="@string/ocr_prefs_epwing_path_group_summary"
+            android:title="@string/ocr_prefs_epwing_path_group_title" >
+            <Preference
+                android:key="ocr_settings_epwing_path_1"
+                android:summary="@string/ocr_prefs_dics_epwing_path_1_summary"
+                android:title="@string/ocr_prefs_dics_epwing_path_1_title" />
+            <Preference
+                android:key="ocr_settings_epwing_path_2"
+                android:summary="@string/ocr_prefs_dics_epwing_path_2_summary"
+                android:title="@string/ocr_prefs_dics_epwing_path_2_title" />
+            <Preference
+                android:key="ocr_settings_epwing_path_3"
+                android:summary="@string/ocr_prefs_dics_epwing_path_3_summary"
+                android:title="@string/ocr_prefs_dics_epwing_path_3_title" />
+            <Preference
+                android:key="ocr_settings_epwing_path_4"
+                android:summary="@string/ocr_prefs_dics_epwing_path_4_summary"
+                android:title="@string/ocr_prefs_dics_epwing_path_4_title" />
+            <Preference
+                android:key="ocr_settings_epwing_reset_1"
+                android:summary="@string/ocr_prefs_dics_epwing_reset_1_summary"
+                android:title="@string/ocr_prefs_dics_epwing_reset_1_title" />
+            <Preference
+                android:key="ocr_settings_epwing_reset_2"
+                android:summary="@string/ocr_prefs_dics_epwing_reset_2_summary"
+                android:title="@string/ocr_prefs_dics_epwing_reset_2_title" />
+            <Preference
+                android:key="ocr_settings_epwing_reset_3"
+                android:summary="@string/ocr_prefs_dics_epwing_reset_3_summary"
+                android:title="@string/ocr_prefs_dics_epwing_reset_3_title" />
+            <Preference
+                android:key="ocr_settings_epwing_reset_4"
+                android:summary="@string/ocr_prefs_dics_epwing_reset_4_summary"
+                android:title="@string/ocr_prefs_dics_epwing_reset_4_title" />
+        </PreferenceScreen>
+        <!-- End EPWING Paths -->
+        
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ocr_settings_epwing_compact_definitions"
+            android:summary="@string/ocr_prefs_epwing_compact_definitions_summary"
+            android:title="@string/ocr_prefs_epwing_compact_definitions_title" />
+
+        <EditTextPreference
+            android:defaultValue="15"
+            android:dialogMessage="@string/ocr_prefs_dics_epwing_max_def_lines_summary"
+            android:dialogTitle="@string/ocr_prefs_dics_epwing_max_def_lines_title"
+            android:inputType="number"
+            android:key="ocr_settings_epwing_max_def_lines"
+            android:title="@string/ocr_prefs_dics_epwing_max_def_lines_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="ocr_settings_epwing_parse"
+            android:summary="@string/ocr_prefs_dics_epwing_parse_summary"
+            android:title="@string/ocr_prefs_dics_epwing_parse_title" />
+
+        <PreferenceCategory android:title="@string/ocr_prefs_epwing_parsed_category_title" >
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="ocr_settings_epwing_show_examples"
+                android:summary="@string/ocr_prefs_dics_epwing_show_examples_summary"
+                android:title="@string/ocr_prefs_dics_epwing_show_examples_title" />
+
+            <EditTextPreference
+                android:defaultValue="3"
+                android:dialogMessage="@string/ocr_prefs_dics_epwing_max_examples_summary"
+                android:dialogTitle="@string/ocr_prefs_dics_epwing_max_examples_title"
+                android:inputType="number"
+                android:key="ocr_settings_epwing_max_examples"
+                android:title="@string/ocr_prefs_dics_epwing_max_examples_title" />
+
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="ocr_settings_epwing_compact_examples"
+                android:summary="@string/ocr_prefs_dics_compact_examples_summary"
+                android:title="@string/ocr_prefs_dics_compact_examples_title" />
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="ocr_settings_epwing_strip_examples_from_defs"
+                android:summary="@string/ocr_prefs_dics_strip_examples_from_defs_summary"
+                android:title="@string/ocr_prefs_dics_strip_examples_from_defs_title" />
+            
+        </PreferenceCategory>
+        <!-- End Options for parsed entries -->
+
+    </PreferenceScreen>
+    <!-- End EPWING group -->
+    
+    
+    <PreferenceScreen
+        android:summary="@string/ocr_prefs_misc_summary"
+        android:title="@string/ocr_prefs_misc_title" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="ocr_settings_show_frequency"
+            android:summary="@string/ocr_prefs_show_frequency_summary"
+            android:title="@string/ocr_prefs_show_frequency_title" />
+        <ListPreference
+		        android:defaultValue="Show list (default)"
+		        android:dialogTitle="@string/ocr_prefs_send_action_title"
+		        android:entries="@array/choose_send_menu_action_labels"
+		        android:entryValues="@array/choose_send_menu_action_values"
+		        android:key="send_button_action"
+		        android:summary="@string/ocr_prefs_send_action_summary"
+		        android:title="@string/ocr_prefs_send_action_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ocr_settings_force_border"
+            android:summary="@string/ocr_prefs_force_border_summary"
+            android:title="@string/ocr_prefs_force_border_title" /> 
+        <PreferenceCategory android:title="@string/ocr_prefs_word_list_save_file_category_title" >
+		        <Preference
+		            android:key="ocr_settings_misc_word_list_save_file_path"
+		            android:summary="@string/ocr_prefs_word_list_save_file_path_summary"
+		            android:title="@string/ocr_prefs_word_list_save_file_path_title" />
+		         <Preference
+                android:key="ocr_settings_misc_word_list_save_file_reset"
+                android:summary="@string/ocr_prefs_word_list_save_file_reset_summary"
+                android:title="@string/ocr_prefs_word_list_save_file_reset_title" />
+		        <ListPreference
+				        android:defaultValue="Expression [tab] Reading [tab] Definition"
+				        android:dialogTitle="@string/ocr_prefs_word_list_save_file_format_title"
+				        android:entries="@array/choose_word_list_file_save_format_labels"
+				        android:entryValues="@array/choose_word_list_file_save_format_values"
+				        android:key="ocr_settings_misc_word_list_save_file_format"
+				        android:summary="@string/ocr_prefs_word_list_save_file_format_summary"
+				        android:title="@string/ocr_prefs_word_list_save_file_format_title" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <!-- End Misc group -->
+
+</PreferenceScreen>

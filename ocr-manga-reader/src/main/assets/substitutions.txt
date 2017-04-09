@@ -1,0 +1,20 @@
+﻿# This is the OCR Manga Reader OCR substitutions file.
+ぁ=あ
+ぃ=い
+ぅ=う
+ぇ=え
+ぉ=お
+カゝ=か
+ヵ=カ
+ゎ=わ
+〈=く
+<=く
+＜=く
+︿=く
+\|二=に
+_=一
+I=ー
+1=ー
+,=
+ =
+\.=

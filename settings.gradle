@@ -1,0 +1,2 @@
+include ':ocr-manga-reader', ':tess-two'
+project(':tess-two').projectDir = new File('libs/tess-two')

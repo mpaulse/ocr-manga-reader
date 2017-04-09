@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Copyright 2009 Robot Media SL
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources>
+
+    <string name="activity_browse_label">Browse screens</string>
+    <string name="activity_sd_browser_label">Select a comic from your SD card</string>
+    <string name="activity_settings_label">Settings</string>
+    <string name="activity_credits_label">Credits</string>
+
+    <!-- Main -->
+    <string name="main_recent_items">OPEN RECENT</string>
+    <string name="main_recent_items_empty">No recent files.\nTap the logo to start.</string>
+    <string name="main_intro">Press <b>Menu</b> or fling up to start</string>
+    <string name="item_navigate_title">Go to…</string>
+    <string name="item_navigate_shortcut">G</string>
+    <string name="item_first_title">First Page</string>
+    <string name="item_previous_title">Previous Page</string>
+    <string name="item_next_title">Next Page</string>
+    <string name="item_previous_screen_title">Previous Screen</string>
+    <string name="item_next_screen_title">Next Screen</string>
+    <string name="item_last_title">Last Page</string>
+    <string name="item_zoom_title">Zoom</string>
+    <string name="item_zoom_in_title">Zoom In</string>
+    <string name="item_zoom_out_title">Zoom Out</string>
+    <string name="item_fit_width_title">Fit Width</string>
+    <string name="item_fit_height_title">Fit Height</string>
+    <string name="item_actual_size">Actual Size</string>
+    <string name="item_toggle_page_layout_title">Toggle 2-Page Layout</string>
+    <string name="item_rotate_title">Rotate</string>
+    <string name="item_browse_title">Page Browser…</string>
+    <string name="item_set_as_title">Set as</string>
+    <string name="item_open_title">Open File…</string>
+    <string name="item_take_photo">Take Photo…</string>
+    <string name="item_settings_title">Settings…</string>
+    <string name="menu_close_title">Close</string>
+    <string name="dialog_no_sd_title">Warning</string>
+    <string name="dialog_no_sd_text">No SD card was found.\n\nPlease insert or mount your SD card to open comics.</string>
+    <string name="dialog_page_progress_title">Loading&#8230;</string>
+    <string name="dialog_page_progress_text">Loading screen @number. Please wait&#8230;</string>
+    <string name="dialog_loading_progress_title">Loading&#8230;</string>
+    <string name="dialog_loading_progress_text">Loading comic archive from SD card.</string>
+    <string name="dialog_load_error_title">Oops!</string>
+    <string name="dialog_load_error_text">An error has occurred while loading.</string>
+    <string name="dialog_page_error_title">Oops!</string>
+    <string name="dialog_page_error_text">Unable to load image. This generally happens because of an out of memory error.\n\nFor CBR/RAR files, try extracting into a folder and open the folder with a long tap.\n\nFor the rest, closing OCR Manga Reader and trying again after a while might help.</string>
+    <string name="dialog_flip_controls_title">Flip controls?</string>
+    <string name="dialog_flip_controls_text">Flip navigation controls to adapt them to current reading direction?</string>
+    <string name="dialog_unavailable_title">App unavailable</string>
+    <string name="sd_browser_back">Back to parent folder</string>
+    <string name="sd_browser_empty">Empty folder</string>
+    <string name="sd_browser_open">OPEN</string>
+    <string name="sd_browser_recent">RECENT</string>
+    <string name="screen_browser_go">Go</string>
+
+    <!-- Preferences -->
+
+    <string name="category_controls_title">Controls</string>
+    <string name="preference_map_actions_title">Custom controls</string>
+    <string name="preference_map_actions_summary">Set the action of each control event</string>
+    <string name="preference_single_tap_title">Single tap</string>
+    <string name="preference_double_tap_title">Double tap</string>
+    <string name="preference_long_tap_title">Long press</string>
+    <string name="preference_trackball_up_title">Trackball up</string>
+    <string name="preference_trackball_down_title">Trackball down</string>
+    <string name="preference_trackball_left_title">Trackball left</string>
+    <string name="preference_trackball_right_title">Trackball right</string>
+    <string name="preference_trackball_center_title">Trackball center</string>
+    <string name="preference_fling_up_title">Fling up</string>
+    <string name="preference_fling_down_title">Fling down</string>
+    <string name="preference_fling_left_title">Fling left</string>
+    <string name="preference_fling_right_title">Fling right</string>
+    <string name="preference_corner_bottom_left_title">Bottom left corner tap</string>
+    <string name="preference_corner_bottom_right_title">Bottom right corner tap</string>
+    <string name="preference_corner_top_left_title">Top left corner tap</string>
+    <string name="preference_corner_top_right_title">Top right corner tap</string>
+    <string name="preference_edge_left_title">Left edge tap</string>
+    <string name="preference_edge_right_title">Right edge tap</string>
+    <string name="preference_edge_top_title">Top edge tap</string>
+    <string name="preference_edge_bottom_title">Bottom edge tap</string>
+
+    <string name="preference_back_title">Back</string>
+    <string name="preference_volume_up_title">Volume up</string>
+    <string name="preference_volume_down_title">Volume down</string>
+    <string name="preference_control_defaults_title">Restore defaults</string>
+    <string name="preference_control_defaults_summary">Reset action settings to default values</string>
+    <string name="preference_direction_title">Reading direction</string>
+    <string name="preference_direction_summary">Choose between left-to-right or right-to-left</string>
+    <string name="preference_auto_rotate_title">Auto-rotate</string>
+    <string name="preference_auto_rotate_summary">Rotate image when phone orientation changes</string>
+    <string name="category_visual_title">Visual</string>
+    <string name="preference_transition_mode_title">Transition mode</string>
+    <string name="preference_transition_mode_summary">Choose the animation for screen transitions</string>
+    <string name="preference_scale_mode_title">Scale mode</string>
+    <string name="preference_scale_mode_summary">Choose how images will be scaled on the screen</string>
+    <string name="preference_show_number_title">Show screen number</string>
+    <string name="preference_show_number_summary">Briefly shows the screen number in a corner</string>
+    <string name="preference_invisible_corners_title">Invisible corners</string>
+    <string name="preference_invisible_corners_summary">Make corner buttons invisible</string>
+    <string name="preference_brigthness_title">Brightness</string>
+    <string name="preference_brigthness_summary">Adjust screen brightness</string>
+    <string name="preference_default_brightness">Default brightness</string>
+    <string name="category_memory_title">History</string>
+    <string name="preference_clear_history_title">Clear history</string>
+    <string name="preference_clear_history_summary">Clear all viewing history</string>
+    <string name="category_about_title">About</string>
+    <string name="preference_acv_listing_title">Google Play listing</string>
+    <string name="preference_version_title">Version</string>
+    <string name="preference_version_summary">OCR Manga Reader v</string>
+    <string name="preference_contact_title">Contact</string>
+    <string name="preference_contact_summary">Email the developer</string>
+    <string name="preference_visit_homepage_title">Visit homepage</string>
+    <string name="preference_visit_homepage_summary">Visit the OCR Manga Reader homepage.</string>
+
+    <!-- Advanced Preferences -->
+    <string name="category_advanced_title">Advanced</string>
+    <string name="preference_max_image_width_title">Max image width (0=auto)</string>
+    <string name="preference_max_image_width_dialog_title">Max image width</string>
+    <string name="preference_max_image_width_dialog_message">Set the maximum image width. Wider images will be downscaled. Set to 0 to let system decide.</string>
+    <string name="preference_max_image_height_title">Max image height (0=auto)</string>
+    <string name="preference_max_image_height_dialog_title">Max image height</string>
+    <string name="preference_max_image_height_dialog_message">Set the maximum image height. Taller images will be downscaled. Set to 0 to let system decide.</string>
+
+    <string name="preference_max_zoom_title">Max zoom factor</string>
+    <string name="preference_max_zoom_dialog_title">Max zoom factor</string>
+    <string name="preference_max_zoom_dialog_message">Set the maximum zoom factor.</string>
+
+    <string name="preference_low_memory_title">Low memory mode</string>
+    <string name="preference_low_memory_summary">Disable preloading and transitions</string>
+
+    <string name="preference_zoom_step_title">Zoom increment</string>
+    <string name="preference_zoom_step_dialog_title">Zoom increment</string>
+    <string name="preference_zoom_step_dialog_message">Set amount to zoom by when a zoom action occurs (such as on a double-tap).</string>
+
+    <string name="preference_scroll_step_title">Scroll amount</string>
+    <string name="preference_scroll_step_dialog_title">Scroll amount</string>
+    <string name="preference_scroll_step_dialog_message">Set amount to scroll for the scroll up/down action.</string>
+
+    <!-- Anki preferences -->
+    <string name="category_anki_title">Anki</string>
+    <string name="preference_anki_deck_title">Deck</string>
+    <string name="preference_anki_deck_summary">Set the deck to which new Anki cards will be added.</string>
+    <string name="preference_anki_model_title">Note type</string>
+    <string name="preference_anki_model_summary">Set the type of note to use when creating Anki cards.</string>
+
+    <!-- OCR Layout View -->
+    <string name="btn_ocr_send">Send</string>
+    <string name="btn_ocr_diag_top_left">↖</string>
+    <string name="btn_ocr_diag_bottom_right">↘</string>
+    <string name="btn_ocr_up">↑</string>
+    <string name="btn_ocr_down">↓</string>
+    <string name="btn_ocr_left">←</string>
+    <string name="btn_ocr_right">→</string>
+    <string name="btn_ocr_lookup_next">▶</string>
+    <string name="btn_ocr_lookup_prev">◀</string>
+    <string name="btn_ocr_hide">Hide</string>
+    <string name="btn_ocr_show">Show</string>
+    <string name="btn_ocr_text_orientation_vertical">Vert</string>
+    <string name="btn_ocr_text_orientation_horizontal">Horiz</string>
+    <string name="btn_ocr_text_orientation_auto">Auto</string>
+    <string name="btn_ocr_menu">Menu</string>
+    <string name="btn_ocr_exit">Exit</string>
+    <string name="ocr_view_start_msg">Tap or draw box around text to OCR</string>
+    <string name="ocr_prefix"></string>
+    <string name="ocr_no_results">No results</string>
+    <string name="ocr_no_dict_entries">Not found in dictionary</string>
+    <string name="ocr_load_assets_dialog_title">Copying OCR assets…</string>
+    <string name="ocr_load_assets_dialog_msg">Please wait while OCR assets are copied to your SD card. This is only done once per app install/update.</string>
+
+
+    <!-- OCR Menu -->
+    <string name="menu_item_ocr_shown">Visibility: Shown</string>
+    <string name="menu_item_ocr_hidden">Visibility: Hidden</string>
+    <string name="menu_item_ocr_text_orientation_vertical">Text orientation: Vertical</string>
+    <string name="menu_item_ocr_text_orientation_horizontal">Text orientation: Horizontal</string>
+    <string name="menu_item_ocr_text_orientation_auto">Text orientation: Auto</string>
+    <string name="menu_item_ocr_send">Send to…</string>
+    <string name="menu_item_ocr_lookup_next">▶ Lookup next word</string>
+    <string name="menu_item_ocr_lookup_prev">◀ Lookup previous word </string>
+
+    <!-- OCR Send Dialog -->
+    <string name="ocr_send_dialog_title">Send to…</string>
+    <string name="ocr_send_dialog_opt_clipboard">Clipboard</string>
+    <string name="ocr_send_dialog_opt_error_correction_editor">OCR Error Correction Editor</string>
+    <string name="ocr_send_dialog_opt_word_list_save_file">Word List Save File</string>
+    <string name="ocr_send_dialog_opt_aedict">Aedict</string>
+    <string name="ocr_send_dialog_opt_ankidroid">AnkiDroid</string>
+    <string name="ocr_send_dialog_opt_eijiro_web">Eijiro J-E (Web)</string>
+    <string name="ocr_send_dialog_opt_goo_web">Goo Jisho J-E/J-J (Web)</string>
+    <string name="ocr_send_dialog_opt_sanseido_web">Sanseido J-J (Web)</string>
+    <string name="ocr_send_dialog_opt_yahoo_je_web">Yahoo Jisho J-E (Web)</string>
+    <string name="ocr_send_dialog_opt_yahoo_jj_web">Yahoo Jisho J-J (Web)</string>
+    <string name="ocr_send_dialog_opt_google_web">Google (Web)</string>
+    <string name="ocr_send_dialog_opt_google_images_web">Google Images (Web)</string>
+
+    <!--  OCR Engine Load Failed Dialog -->
+    <string name="ocr_engine_load_failed_dialog_title">Error</string>
+    <string name="ocr_engine_load_failed_dialog_msg">Failed to load the OCR engine.</string>
+
+    <!--  OCR Dictionary Load Failed Dialog -->
+    <string name="ocr_dict_load_failed_dialog_title">Error</string>
+    <string name="ocr_dict_load_failed_dialog_msg">Failed to load the OCR dictionary.</string>
+
+    <!--  OCR Assets Missing Dialog -->
+    <string name="ocr_assets_missing_dialog_title">Error</string>
+    <string name="ocr_assets_missing_dialog_msg">One or more OCR assets are missing.</string>
+
+    <!--  OCR Error Correction Dialog -->
+    <string name="ocr_error_correction_dialog_title">Correct OCR Errors</string>
+    <string name="ocr_error_correction_dialog_msg">You may manually correct any OCR errors in the box provided.</string>
+
+    <!-- OCR error dialog -->
+    <string name="ocr_error_dialog_title">Error</string>
+
+    <!-- OCR anki messages -->
+    <string name="ocr_send_anki_deck_not_found">Anki deck not found:</string>
+    <string name="ocr_send_anki_model_not_found">Anki model not found:</string>
+    <string name="ocr_send_anki_permission_denied">Permission to add cards to Anki denied</string>
+    <string name="ocr_send_anki_success">Anki card added</string>
+    <string name="ocr_send_anki_card_already_exists">Anki card already exists</string>
+    <string name="ocr_send_anki_heading">Add Anki Card</string>
+
+    <!-- OCR Preferences -->
+    <string name="ocr_prefs_title">OCR</string>
+
+    <string name="ocr_prefs_color_group_title">Colors</string>
+    <string name="ocr_prefs_color_group_summary">Choose custom colors</string>
+    <string name="ocr_prefs_dict_background_color_title">Dictionary background color</string>
+    <string name="ocr_prefs_dict_background_color_summary">Choose the color of the dictionary background</string>
+    <string name="ocr_prefs_dict_expression_color_title">Dictionary expression color</string>
+    <string name="ocr_prefs_dict_expression_color_summary">Choose the color to use for expressions</string>
+    <string name="ocr_prefs_dict_reading_color_title">Dictionary reading color</string>
+    <string name="ocr_prefs_dict_reading_color_summary">Choose the color to use for readings</string>
+    <string name="ocr_prefs_dict_definition_color_title">Dictionary definition color</string>
+    <string name="ocr_prefs_dict_definition_color_summary">Choose the color to use for definitions</string>
+    <string name="ocr_prefs_dict_conjugation_color_title">Dictionary de-inflection rule color</string>
+    <string name="ocr_prefs_dict_conjugation_color_summary">Choose the color to use for de-inflection rules</string>
+    <string name="ocr_prefs_sub_def_color_title">Dictionary sub-definition number color</string>
+    <string name="ocr_prefs_sub_def_color_summary">Choose the color to use for sub-definition numbers</string>
+    <string name="ocr_prefs_example_prepend_color_title">Dictionary example triangle color</string>
+    <string name="ocr_prefs_example_prepend_color_summary">Choose the color to use for the example triangle</string>
+    <string name="ocr_prefs_example_jap_color_title">Dictionary Japanese example text color</string>
+    <string name="ocr_prefs_example_jap_color_summary">Choose the color to use for the Japanese portion of the examples</string>
+    <string name="ocr_prefs_example_eng_color_title">Dictionary English example text color</string>
+    <string name="ocr_prefs_example_eng_color_summary">Choose the color to use for the English portion of the examples</string>
+    <string name="ocr_prefs_dict_name_color_title">Dictionary name color</string>
+    <string name="ocr_prefs_dict_name_color_summary">Choose the color to use for dictionary names</string>
+    <string name="ocr_prefs_dict_separator_color_title">Dictionary separator color</string>
+    <string name="ocr_prefs_dict_separator_color_summary">Choose the color to use for separators</string>
+    <string name="ocr_prefs_dict_ocr_text_color_title">OCR text color</string>
+    <string name="ocr_prefs_dict_ocr_text_color_summary">Choose the color to use for the OCR\'d text</string>
+    <string name="ocr_prefs_capture_box_color_title">Capture box color</string>
+    <string name="ocr_prefs_capture_box_color_summary">Choose the color of the capture box</string>
+    <string name="ocr_prefs_show_bounding_boxes_color_title">Bounding box color</string>
+    <string name="ocr_prefs_show_bounding_boxes_color_summary">Choose the color of the bounding boxes</string>
+    <string name="ocr_prefs_freq_very_common_color_title">Very frequency common color</string>
+    <string name="ocr_prefs_freq_very_common_color_summary">Choose the color representing very common frequency</string>
+    <string name="ocr_prefs_freq_common_color_title">Common frequency color</string>
+    <string name="ocr_prefs_freq_common_color_summary">Choose the color representing common frequency</string>
+    <string name="ocr_prefs_freq_uncommon_color_title">Uncommon frequency color</string>
+    <string name="ocr_prefs_freq_uncommon_summary">Choose the color representing uncommon frequency</string>
+    <string name="ocr_prefs_freq_rare_color_title">Rare frequency color</string>
+    <string name="ocr_prefs_freq_rare_color_summary">Choose the color representing rare frequency</string>
+    <string name="ocr_prefs_word_highlight_color_title">Word highlight color</string>
+    <string name="ocr_prefs_word_highlight_color_summary">Choose the background color of the current word</string>
+    <string name="ocr_prefs_known_word_color_title">Known/todo word marker color</string>
+    <string name="ocr_prefs_known_word_color_summary">Choose the color to use for the known/todo word marker</string>
+
+
+    <string name="ocr_prefs_layout_group_title">Layout</string>
+    <string name="ocr_prefs_layout_group_summary">Configure layout and visibility of on-screen elements</string>
+    <string name="ocr_prefs_show_bounding_boxes_title">Show bounding boxes</string>
+    <string name="ocr_prefs_show_bounding_boxes_summary">Draw thin boxes around the OCR\'d text</string>
+    <string name="ocr_prefs_simplified_layout_portrait_title">Simplified layout (portrait)</string>
+    <string name="ocr_prefs_simplified_layout_portrait_summary">De-clutter the OCR interface when in portrait mode</string>
+    <string name="ocr_prefs_simplified_layout_landscape_title">Simplified layout (landscape)</string>
+    <string name="ocr_prefs_simplified_layout_landscape_summary">De-clutter the OCR interface when in landscape mode</string>
+    <string name="ocr_prefs_large_nudge_buttons_title">Large nudge buttons</string>
+    <string name="ocr_prefs_large_nudge_buttons_summary">Increase size of the nudge buttons (useful for tablets)</string>
+    <string name="ocr_prefs_show_text_orientation_button_title">Show text orientation button</string>
+    <string name="ocr_prefs_show_text_orientation_button_summary">Show the vertical/horizontal text orientation button</string>
+    <string name="ocr_prefs_show_nudge_buttons_title">Show nudge buttons</string>
+    <string name="ocr_prefs_show_nudge_buttons_summary">Show the nudge up/down/left/right buttons</string>
+    <string name="ocr_prefs_show_send_button_title">Show the Send button</string>
+    <string name="ocr_prefs_show_send_button_summary">Show the send button</string>
+    <string name="ocr_prefs_show_lookup_next_button_title">Show the next word button</string>
+    <string name="ocr_prefs_show_lookup_next_button_summary">Show the \'lookup next word\' button</string>
+    <string name="ocr_prefs_show_lookup_prev_button_title">Show the previous word button</string>
+    <string name="ocr_prefs_show_lookup_prev_button_summary">Show the \'lookup previous word\' button</string>
+
+
+    <string name="ocr_prefs_edict_group_title">EDICT Dictionary</string>
+    <string name="ocr_prefs_edict_group_summary">Configure built-in EDICT dictionary</string>
+
+    <string name="ocr_prefs_compact_definitions_title">Compact definitions</string>
+    <string name="ocr_prefs_compact_definitions_summary">Remove linebreaks from definitions</string>
+
+
+    <string name="ocr_prefs_epwing_group_title">EPWING Dictionaries</string>
+    <string name="ocr_prefs_epwing_group_summary">Configure user-provided EPWING dictionaries</string>
+
+
+    <string name="ocr_prefs_epwing_path_group_title">Paths to EPWING dictionaries</string>
+    <string name="ocr_prefs_epwing_path_group_summary">You may enter up to 4 EPWING dictionaries</string>
+
+    <string name="ocr_prefs_dics_epwing_path_1_title">Dictionary 1 \'CATALOGS\' file</string>
+    <string name="ocr_prefs_dics_epwing_path_1_summary"></string>
+    <string name="ocr_prefs_dics_epwing_path_2_title">Dictionary 2 \'CATALOGS\' file</string>
+    <string name="ocr_prefs_dics_epwing_path_2_summary"></string>
+    <string name="ocr_prefs_dics_epwing_path_3_title">Dictionary 3 \'CATALOGS\' file</string>
+    <string name="ocr_prefs_dics_epwing_path_3_summary"></string>
+    <string name="ocr_prefs_dics_epwing_path_4_title">Dictionary 4 \'CATALOGS\' file</string>
+    <string name="ocr_prefs_dics_epwing_path_4_summary"></string>
+
+    <string name="ocr_prefs_dics_epwing_reset_1_title">Reset Dictionary 1</string>
+    <string name="ocr_prefs_dics_epwing_reset_1_summary"></string>
+    <string name="ocr_prefs_dics_epwing_reset_2_title">Reset Dictionary 2</string>
+    <string name="ocr_prefs_dics_epwing_reset_2_summary"></string>
+    <string name="ocr_prefs_dics_epwing_reset_3_title">Reset Dictionary 3</string>
+    <string name="ocr_prefs_dics_epwing_reset_3_summary"></string>
+    <string name="ocr_prefs_dics_epwing_reset_4_title">Reset Dictionary 4</string>
+    <string name="ocr_prefs_dics_epwing_reset_4_summary"></string>
+
+    <string name="ocr_prefs_epwing_compact_definitions_title">Compact definitions</string>
+    <string name="ocr_prefs_epwing_compact_definitions_summary">Remove linebreaks from definitions</string>
+
+    <string name="ocr_prefs_dics_epwing_max_def_lines_title">Max lines to display</string>
+    <string name="ocr_prefs_dics_epwing_max_def_lines_summary"></string>
+
+    <string name="ocr_prefs_dics_epwing_parse_title">Parse entries (for supported dictionaries)</string>
+    <string name="ocr_prefs_dics_epwing_parse_summary">Perform additional processing to determine an entry\'s expression, reading, definitions and examples. Uncheck to show raw entries. Dictionaries that support parsing:  『研究社　新和英大辞典　第５版』、 『研究社　新英和・和英中辞典』、 『広辞苑第六版』、 『大辞泉』、 『三省堂　スーパー大辞林』、 『大辞林 第2版』、 『明鏡国語辞典』。</string>
+
+    <string name="ocr_prefs_epwing_parsed_category_title">Options for parsed entries</string>
+
+    <string name="ocr_prefs_dics_epwing_show_examples_title">Show example sentences</string>
+    <string name="ocr_prefs_dics_epwing_show_examples_summary"></string>
+
+    <string name="ocr_prefs_dics_epwing_max_examples_title">Max examples to display</string>
+    <string name="ocr_prefs_dics_epwing_max_examples_summary"></string>
+
+    <string name="ocr_prefs_dics_compact_examples_title">Compact examples</string>
+    <string name="ocr_prefs_dics_compact_examples_summary">Remove linebreaks from examples</string>
+
+    <string name="ocr_prefs_dics_strip_examples_from_defs_title">Strip examples from the definition text</string>
+    <string name="ocr_prefs_dics_strip_examples_from_defs_summary">Applies to J-J dictionaries</string>
+
+
+    <string name="ocr_prefs_misc_title">Misc</string>
+    <string name="ocr_prefs_misc_summary">Configure other OCR settings</string>
+
+    <string name="ocr_prefs_force_border_title">Force Border</string>
+    <string name="ocr_prefs_force_border_summary">Force 2 pixel border around text before OCRing</string>
+
+    <string name="ocr_prefs_show_frequency_title">Show Frequency</string>
+    <string name="ocr_prefs_show_frequency_summary">Show word frequency to the right of the reading</string>
+
+    <string name="ocr_prefs_send_action_title">Send Action</string>
+    <string name="ocr_prefs_send_action_summary">Action to take when the OCR Send button is tapped</string>
+
+    <string name="ocr_prefs_word_list_save_file_category_title">Word List Save File</string>
+    <string name="ocr_prefs_word_list_save_file_path_title">Word List Save File Path</string>
+    <string name="ocr_prefs_word_list_save_file_path_summary"></string>
+    <string name="ocr_prefs_word_list_save_file_reset_title">Reset Path</string>
+    <string name="ocr_prefs_word_list_save_file_reset_summary"></string>
+    <string name="ocr_prefs_word_list_save_file_format_title">Word List Save File Format</string>
+    <string name="ocr_prefs_word_list_save_file_format_summary">Format to use when saving entries</string>
+
+</resources>

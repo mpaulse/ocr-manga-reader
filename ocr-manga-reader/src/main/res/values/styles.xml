@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2009 Robot Media SL
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources>
+
+    <!-- Base application theme is the default theme. -->
+    <style name="Theme" parent="android:Theme.Holo">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:actionBarStyle">@style/Theme.ActionBarStyle</item>
+    </style>
+
+    <style name="Theme.text2b">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <style name="Theme.text3">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#CCC</item>
+    </style>
+
+    <style name="Theme.image2">
+        <item name="android:padding">1px</item>
+    </style>
+
+    <style name="Theme.tabWidget">
+        <item name="android:gravity">fill_horizontal|center_vertical</item>
+        <item name="android:divider">@android:drawable/divider_horizontal_bright</item>
+    </style>
+
+    <style name="Theme.ActionBarStyle" parent="android:style/Widget.Holo.ActionBar">
+        <item name="android:background">#a6000000</item>
+    </style>
+
+    <!-- List -->
+    <style name="Theme.ListHeader">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/kiwi_green</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:background">@drawable/bg_header</item>
+    </style>
+
+    <style name="Theme.ListItemText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:background">@drawable/bg_row</item>
+    </style>
+
+    <!-- OCR -->
+    <style name="Theme.OcrButton">
+        <item name="android:textColor">@color/ocr_btn_text_enabled</item>
+        <item name="android:shadowColor">#FF000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    
+    <style name="Theme.OcrStartMessage">
+        <item name="android:background">#7F000000</item>
+        <item name="android:textColor">@color/kiwi_green</item>
+        <item name="android:shadowColor">#FF000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+</resources>
