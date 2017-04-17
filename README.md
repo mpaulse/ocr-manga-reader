@@ -1,5 +1,8 @@
+Customized OCR Manga Reader for Android
+=======================================
+
 Overview
-=========
+---------
 
 A customized version of OCR Manga Reader 6.1 (http://ocrmangareaderforandroid.sourceforge.net/)
 that allows for greater control in the manner in which Anki cards are created by 
@@ -28,16 +31,16 @@ Only tablets supported at this stage.
 
 
 Screenshots
-===========
+-----------
 
-*Anki settings:*
+**Anki settings:**
 
 ![Anki settings screenshot 1](doc/anki_settings_screenshot_1.png)
 
 ![Anki settings screenshot 2](doc/anki_settings_screenshot_2.png)
 
 
-*Card creation pop-up dialog:*
+**Card creation pop-up dialog:**
 
 ![Card creation dialog screenshot](doc/anki_dialog.png)
 
