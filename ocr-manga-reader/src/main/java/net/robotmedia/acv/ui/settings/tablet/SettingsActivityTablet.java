@@ -21,6 +21,8 @@ import android.preference.PreferenceActivity;
 import com.cb4960.ocrmr.R;
 import com.ichi2.anki.api.AddContentApi;
 
+import net.robotmedia.acv.utils.AnkiUtils;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -35,10 +37,10 @@ public class SettingsActivityTablet extends PreferenceActivity
   {
     loadHeadersFromResource(R.xml.preference_headers, target);
 
-    if (AddContentApi.getAnkiDroidPackageName(this) == null) {
+    if (!AnkiUtils.isApiAvailable(this)) {
       Iterator<Header> i = target.iterator();
       while (i.hasNext()) {
-        if (i.next().getTitle(getResources()).equals(getString(R.string.category_advanced_title))) {
+        if (i.next().getTitle(getResources()).equals(getString(R.string.category_anki_title))) {
           i.remove();
           break;
         }

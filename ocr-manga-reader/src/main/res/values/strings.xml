@@ -151,9 +151,17 @@
     <!-- Anki preferences -->
     <string name="category_anki_title">Anki</string>
     <string name="preference_anki_deck_title">Deck</string>
-    <string name="preference_anki_deck_summary">Set the deck to which new Anki cards will be added.</string>
+    <string name="preference_anki_deck_summary">Select the deck to add Anki cards to.</string>
     <string name="preference_anki_model_title">Note type</string>
-    <string name="preference_anki_model_summary">Set the type of note to use when creating Anki cards.</string>
+    <string name="preference_anki_model_summary">Select the type of note (card type) to use when creating Anki cards.</string>
+    <string name="preference_anki_fields_title">Card field settings</string>
+    <string name="preference_anki_fields_summary">Configure how dictionary entries are used to set Anki card fields.</string>
+    <string name="preference_anki_fields_expression">Japanese Expression</string>
+    <string name="preference_anki_fields_reading">Reading</string>
+    <string name="preference_anki_fields_definition">Definition</string>
+    <string name="preference_anki_fields_unused">Leave blank</string>
+    <string name="preference_anki_confirm_send_title">Show card creation dialog</string>
+    <string name="preference_anki_confirm_send_summary">Show an add/edit dialog before sending cards to Anki.</string>
 
     <!-- OCR Layout View -->
     <string name="btn_ocr_send">Send</string>
@@ -224,13 +232,17 @@
     <!-- OCR error dialog -->
     <string name="ocr_error_dialog_title">Error</string>
 
-    <!-- OCR anki messages -->
+    <!-- anki messages -->
     <string name="ocr_send_anki_deck_not_found">Anki deck not found:</string>
-    <string name="ocr_send_anki_model_not_found">Anki model not found:</string>
+    <string name="ocr_send_anki_model_not_found">Anki node type not found:</string>
+    <string name="ocr_send_anki_model_fields_not_found">No fields found for Anki node type:</string>
     <string name="ocr_send_anki_permission_denied">Permission to add cards to Anki denied</string>
     <string name="ocr_send_anki_success">Anki card added</string>
     <string name="ocr_send_anki_card_already_exists">Anki card already exists</string>
-    <string name="ocr_send_anki_heading">Add Anki Card</string>
+    <string name="ocr_send_anki_cancelled">Anki card creation cancelled</string>
+    <string name="ocr_send_anki_title">Add Anki Card</string>
+    <string name="ocr_send_anki_deck">Deck</string>
+    <string name="ocr_send_anki_model">Node Type</string>
 
     <!-- OCR Preferences -->
     <string name="ocr_prefs_title">OCR</string>

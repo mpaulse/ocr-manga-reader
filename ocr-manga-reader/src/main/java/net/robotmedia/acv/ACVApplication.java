@@ -18,6 +18,7 @@ package net.robotmedia.acv;
 import android.app.Application;
 
 import net.robotmedia.acv.logic.PreferencesController;
+import net.robotmedia.acv.utils.AnkiUtils;
 
 public class ACVApplication extends Application
 {
@@ -39,6 +40,8 @@ public class ACVApplication extends Application
       preferences.restoreControlDefaults();
       preferences.setDefaultOrientation();
     }
+
+    AnkiUtils.initCachedInfo(getApplicationContext());
   }
 
 }

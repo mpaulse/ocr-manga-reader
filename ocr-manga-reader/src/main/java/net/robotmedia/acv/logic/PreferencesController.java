@@ -48,6 +48,13 @@ public class PreferencesController
   public static final String PREFERENCE_MISC_WORD_LIST_SAVE_FILE_FORMAT = "ocr_settings_misc_word_list_save_file_format";
   public static final String PREFERENCE_ANKI_DECK = "anki_deck";
   public static final String PREFERENCE_ANKI_MODEL = "anki_model";
+  public static final String PREFERENCE_ANKI_MODEL_FIELD_PREFIX = "anki_field_";
+  public static final String PREFERENCE_ANKI_CONFIRM_SEND = "anki_confirm_send";
+
+  public static final int PREFERENCE_ANKI_MODEL_FIELD_EXPRESSION_INT = 0;
+  public static final int PREFERENCE_ANKI_MODEL_FIELD_READING_INT = 1;
+  public static final int PREFERENCE_ANKI_MODEL_FIELD_DEFINITION_INT = 2;
+  public static final int PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT = 3;
 
   private SharedPreferences preferences;
 

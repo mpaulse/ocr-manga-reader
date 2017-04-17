@@ -18,6 +18,7 @@ package net.robotmedia.acv.ui;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -51,6 +52,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.cb4960.ocrmr.R;
 
@@ -62,6 +64,7 @@ import net.robotmedia.acv.logic.SetComicScreenAsTask;
 import net.robotmedia.acv.provider.HistoryManager;
 import net.robotmedia.acv.ui.settings.mobile.SettingsActivityMobile;
 import net.robotmedia.acv.ui.settings.tablet.SettingsActivityTablet;
+import net.robotmedia.acv.ui.widget.AnkiSendDialogFragment;
 import net.robotmedia.acv.ui.widget.ComicView;
 import net.robotmedia.acv.ui.widget.ComicViewListener;
 import net.robotmedia.acv.ui.widget.OcrLayout;
@@ -81,7 +84,7 @@ import java.util.Locale;
 import java.util.TreeMap;
 
 public class ComicViewerActivity extends ExtendedActivity implements OnGestureListener,
-    GestureDetector.OnDoubleTapListener, ComicViewListener
+    GestureDetector.OnDoubleTapListener, ComicViewListener, AnkiSendDialogFragment.ClickListener
 {
 
   public final static String POSITION_EXTRA = "position";
@@ -259,7 +262,16 @@ public class ComicViewerActivity extends ExtendedActivity implements OnGestureLi
       loadComic(photoFile.toString(), 0);
     }
   }
-  
+
+  @Override
+  public void onAnkiSendDialogOK(long deckId, long modelId, String modelKey, String[] fieldValues) {
+    ocrLayout.addAnkiCard(deckId, modelId, modelKey, fieldValues);
+  }
+
+  @Override
+  public void onAnkiSendDialogCancel() {
+      Toast.makeText(this, R.string.ocr_send_anki_cancelled, Toast.LENGTH_SHORT).show();
+  }
 
   @Override
   public void onWindowFocusChanged(boolean hasFocus)

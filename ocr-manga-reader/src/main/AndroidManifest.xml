@@ -17,8 +17,8 @@
     package="com.cb4960.ocrmr"
     android:installLocation="auto"
     android:largeHeap="true"
-    android:versionCode="390000"
-    android:versionName="6.1.mp-1">
+    android:versionCode="390001"
+    android:versionName="6.1.mp-2">
 
     <uses-sdk
         android:minSdkVersion="11"

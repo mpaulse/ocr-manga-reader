@@ -36,6 +36,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
+import android.preference.Preference;
 import android.support.annotation.StringRes;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -87,6 +88,7 @@ import com.ichi2.anki.api.NoteInfo;
 import net.robotmedia.acv.Constants;
 import net.robotmedia.acv.logic.PreferencesController;
 import net.robotmedia.acv.ui.ComicViewerActivity;
+import net.robotmedia.acv.utils.AnkiUtils;
 import net.robotmedia.acv.utils.BoundingTextRect;
 import net.robotmedia.acv.utils.FileUtils;
 import net.robotmedia.acv.utils.Furigana;
@@ -2757,58 +2759,59 @@ public class OcrLayout extends RelativeLayout implements OnGestureListener
    * @param entry
    * @author Marlon Paulse
    */
-  private void sendToAnkiDroid(Entry entry)
-  {
-    if (AddContentApi.getAnkiDroidPackageName(context) != null) {
-      AddContentApi anki = new AddContentApi(context);
-
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-        && ContextCompat.checkSelfPermission(context, AddContentApi.READ_WRITE_PERMISSION)
-              != PackageManager.PERMISSION_GRANTED) {
-        ActivityCompat.requestPermissions(comicViewerActivity, new String[] { AddContentApi.READ_WRITE_PERMISSION }, ANKI_RW_PERM_REQ_CODE);
+  private void sendToAnkiDroid(final Entry entry) {
+    if (AnkiUtils.isApiAvailable(context)) {
+      if (AnkiUtils.haveApiPermissions(context)) {
+        ActivityCompat.requestPermissions(comicViewerActivity, new String[]{AddContentApi.READ_WRITE_PERMISSION}, ANKI_RW_PERM_REQ_CODE);
         return;
       }
 
       String deckName =
               preferencesController.getPreferences().getString(
                       PreferencesController.PREFERENCE_ANKI_DECK,
-                      anki.getSelectedDeckName());
-      long deckId = -1;
-      Map<Long, String> decks = anki.getDeckList();
-      for (Map.Entry<Long, String> deck : decks.entrySet()) {
-        if (deck.getValue().equals(deckName)) {
-          deckId = deck.getKey();
-          break;
-        }
-      }
-      if (deckId == -1) {
+                      AnkiUtils.getDefaultDeck());
+      long deckId = AnkiUtils.getDeckID(deckName, context);
+      if (deckId < 0) {
         showErrorDialog(context.getString(R.string.ocr_send_anki_deck_not_found) + " " + deckName);
         return;
       }
 
-      long modelId = anki.getCurrentModelId();
-      String modelName =
+      final String modelName =
               preferencesController.getPreferences().getString(
                       PreferencesController.PREFERENCE_ANKI_MODEL,
-                      anki.getModelName(modelId));
-      Map<Long, String> models = anki.getModelList(4); // expr + reading + definition + examples
-      for (Map.Entry<Long, String> model : models.entrySet()) {
-        if (model.getValue().equals(modelName)) {
-          modelId = model.getKey();
-          break;
-        }
-      }
+                      AnkiUtils.getDefaultModel());
+      long modelId = AnkiUtils.getModelID(modelName, context);
       if (modelId < 0) {
         showErrorDialog(context.getString(R.string.ocr_send_anki_model_not_found) + " " + modelName);
         return;
       }
 
-      List<NoteInfo> dups = anki.findDuplicateNotes(modelId, entry.Expression);
-      if (dups.isEmpty()) {
-        anki.addNote(modelId, deckId, new String[]{entry.Expression, entry.Reading, entry.Definition, ""}, null);
-        Toast.makeText(context, R.string.ocr_send_anki_success, Toast.LENGTH_SHORT).show();
+      final String[] fields = AnkiUtils.getModelFields(modelId, context);
+      if (fields == null) {
+        showErrorDialog(context.getString(R.string.ocr_send_anki_model_fields_not_found) + " " + modelName);
+        return;
+      }
+
+      String[] info = { entry.Expression, entry.Reading, entry.Definition };
+      final String[] values = new String[fields.length];
+      for (int i = 0; i < values.length; i++) {
+        int fieldType = PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT;
+        try {
+          fieldType =
+                  Integer.parseInt(
+                          preferencesController.getPreferences().getString(
+                                  PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_PREFIX + modelName + "_" + fields[i],
+                                  String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT)));
+        } catch (NumberFormatException e) {
+        }
+        values[i] = (fieldType >= 0 && fieldType < info.length) ? info[fieldType] : "";
+      }
+
+      if (preferencesController.getPreferences().getBoolean(PreferencesController.PREFERENCE_ANKI_CONFIRM_SEND, true)) {
+        AnkiSendDialogFragment dialog = AnkiSendDialogFragment.newInstance(deckId, deckName, modelId, modelName, entry.Expression, fields, values);
+        dialog.show(comicViewerActivity.getFragmentManager(), "ankiSend");
       } else {
-        Toast.makeText(context, R.string.ocr_send_anki_card_already_exists, Toast.LENGTH_SHORT).show();
+        addAnkiCard(deckId, modelId, entry.Expression, values);
       }
     } else if (IntentUtils.isIntentAvailable(context, "org.openintents.action.CREATE_FLASHCARD")) {
       Intent intent = new Intent("org.openintents.action.CREATE_FLASHCARD");
@@ -2836,7 +2839,14 @@ public class OcrLayout extends RelativeLayout implements OnGestureListener
       this.context.startActivity(intent);
     }
   }
-  
+
+  public void addAnkiCard(long deckId, long modelId, String modelKey, String[] fieldValues) {
+    if (AnkiUtils.addCard(deckId, modelId, modelKey, fieldValues, context)) {
+      Toast.makeText(context, R.string.ocr_send_anki_success, Toast.LENGTH_SHORT).show();
+    } else {
+      Toast.makeText(context, R.string.ocr_send_anki_card_already_exists, Toast.LENGTH_SHORT).show();
+    }
+  }
   
   /** Send the provided text to Eijiro J-E Web. */
   private void sendToEijiroWeb(String text)
