@@ -29,6 +29,7 @@ import java.util.Map;
 
 public class AnkiUtils {
 
+    private static boolean initialized = false;
     private static String defaultDeck = null;
     private static String defaultModel = null;
     private static String[] decks = null;
@@ -41,13 +42,19 @@ public class AnkiUtils {
 
         AddContentApi anki = new AddContentApi(context);
 
-        decks = anki.getDeckList().values().toArray(new String[0]);
-        Arrays.sort(decks);
-        defaultDeck = anki.getSelectedDeckName();
+        try {
+            decks = anki.getDeckList().values().toArray(new String[0]);
+            Arrays.sort(decks);
+            defaultDeck = anki.getSelectedDeckName();
 
-        models = anki.getModelList().values().toArray(new String[0]);
-        Arrays.sort(models);
-        defaultModel = anki.getModelName(anki.getCurrentModelId());
+            models = anki.getModelList().values().toArray(new String[0]);
+            Arrays.sort(models);
+            defaultModel = anki.getModelName(anki.getCurrentModelId());
+
+            initialized = true;
+        } catch (IllegalStateException e){
+            // AnkiDroid database inaccessible
+        }
     }
 
     public static String[] getDecks() {
@@ -55,7 +62,7 @@ public class AnkiUtils {
     }
 
     public static long getDeckID(String name, Context context) {
-        if (isApiAvailable(context)) {
+        if (initialized) {
             AddContentApi anki = new AddContentApi(context);
             Map<Long, String> decks = anki.getDeckList();
             for (Map.Entry<Long, String> deck : decks.entrySet()) {
@@ -80,7 +87,7 @@ public class AnkiUtils {
     }
 
     public static long getModelID(String name, Context context) {
-        if (isApiAvailable(context)) {
+        if (initialized) {
             AddContentApi anki = new AddContentApi(context);
             Map<Long, String> models = anki.getModelList(1);
             for (Map.Entry<Long, String> model : models.entrySet()) {
@@ -94,7 +101,7 @@ public class AnkiUtils {
 
     public static String[] getModelFields(long modelId, Context context) {
         String[] fields = null;
-        if (isApiAvailable(context)) {
+        if (initialized) {
             AddContentApi anki = new AddContentApi(context);
             fields = anki.getFieldList(modelId);
         }
@@ -102,7 +109,7 @@ public class AnkiUtils {
     }
 
     public static boolean addCard(long deckId, long modelId, String modelKey, String[] fieldValues, Context context) {
-        if (isApiAvailable(context)) {
+        if (initialized) {
             AddContentApi anki = new AddContentApi(context);
             List<NoteInfo> dups = anki.findDuplicateNotes(modelId, modelKey);
             if (dups.isEmpty()) {
@@ -114,7 +121,7 @@ public class AnkiUtils {
     }
 
     public static boolean cardExists(long modelId, String modelKey, Context context) {
-        if (isApiAvailable(context)) {
+        if (initialized) {
             AddContentApi anki = new AddContentApi(context);
             List<NoteInfo> dups = anki.findDuplicateNotes(modelId, modelKey);
             if (!dups.isEmpty()) {
@@ -122,6 +129,10 @@ public class AnkiUtils {
             }
         }
         return false;
+    }
+
+    public static boolean isInitialized() {
+        return initialized;
     }
 
     public static boolean isApiAvailable(Context context) {

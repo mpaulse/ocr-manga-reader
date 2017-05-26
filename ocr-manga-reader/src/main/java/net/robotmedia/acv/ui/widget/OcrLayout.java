@@ -24,7 +24,6 @@ import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
@@ -34,12 +33,9 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Handler;
-import android.preference.Preference;
 import android.support.annotation.StringRes;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -83,7 +79,6 @@ import com.googlecode.leptonica.android.Scale;
 import com.googlecode.leptonica.android.Seedfill;
 import com.googlecode.tesseract.android.TessBaseAPI;
 import com.ichi2.anki.api.AddContentApi;
-import com.ichi2.anki.api.NoteInfo;
 
 import net.robotmedia.acv.Constants;
 import net.robotmedia.acv.logic.PreferencesController;
@@ -113,7 +108,6 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Stack;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -711,7 +705,7 @@ public class OcrLayout extends RelativeLayout implements OnGestureListener
   public boolean onSingleTapUp(MotionEvent e)
   {
     // If the user has decided to tap the text instead of drawing a box around it, perform a trigger capture
-    if((this.captureState == CaptureState.SET_BOTTOM_RIGHT) && (this.captureTimer != null))
+    if((this.captureState == CaptureState.SET_BOTTOM_RIGHT || captureState == CaptureState.DRAG) && (this.captureTimer != null))
     {
       this.createTriggerCaptureBox(new Point((int)e.getX(), (int)e.getY()));
       this.updateDicViewLocation();
@@ -2792,7 +2786,12 @@ public class OcrLayout extends RelativeLayout implements OnGestureListener
         return;
       }
 
-      String[] info = { entry.Expression, entry.Reading, entry.Definition };
+      String egSentence = "";
+      if (entry.ExampleList != null && entry.ExampleList.size() > 0) {
+        egSentence = entry.ExampleList.get(0).Text;
+      }
+
+      String[] info = { entry.Expression, entry.Reading, entry.Definition, "", egSentence };
       final String[] values = new String[fields.length];
       for (int i = 0; i < values.length; i++) {
         int fieldType = PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT;

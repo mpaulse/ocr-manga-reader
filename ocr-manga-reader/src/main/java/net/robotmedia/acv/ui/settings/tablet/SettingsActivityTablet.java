@@ -37,7 +37,7 @@ public class SettingsActivityTablet extends PreferenceActivity
   {
     loadHeadersFromResource(R.xml.preference_headers, target);
 
-    if (!AnkiUtils.isApiAvailable(this)) {
+    if (!AnkiUtils.isInitialized()) {
       Iterator<Header> i = target.iterator();
       while (i.hasNext()) {
         if (i.next().getTitle(getResources()).equals(getString(R.string.category_anki_title))) {

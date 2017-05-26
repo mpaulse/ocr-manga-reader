@@ -20,6 +20,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 
 import com.cb4960.ocrmr.R;
@@ -27,7 +29,9 @@ import com.cb4960.ocrmr.R;
 import net.robotmedia.acv.logic.PreferencesController;
 import net.robotmedia.acv.utils.AnkiUtils;
 
-public class AnkiSettingsFragment extends ExtendedPreferenceFragment  {
+public class AnkiSettingsFragment extends ExtendedPreferenceFragment implements OnPreferenceChangeListener {
+
+    private PreferenceScreen fieldPrefScreen;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,42 +58,14 @@ public class AnkiSettingsFragment extends ExtendedPreferenceFragment  {
         modelPref.setEntries(entries);
         modelPref.setEntryValues(entries);
         modelPref.setDefaultValue(AnkiUtils.getDefaultModel());
+        modelPref.setOnPreferenceChangeListener(this);
 
-        PreferenceScreen fieldPrefScreen = getPreferenceManager().createPreferenceScreen(context);
+        fieldPrefScreen = getPreferenceManager().createPreferenceScreen(context);
         fieldPrefScreen.setTitle(R.string.preference_anki_fields_title);
         fieldPrefScreen.setSummary(R.string.preference_anki_fields_summary);
-        fieldPrefScreen.setEnabled(false);
         PreferencesController prefCtrl = new PreferencesController(context);
         String modelName = prefCtrl.getPreferences().getString(PreferencesController.PREFERENCE_ANKI_MODEL, AnkiUtils.getDefaultModel());
-        long modelId = AnkiUtils.getModelID(modelName, context);
-        if (modelId >= 0) {
-            String[] fields = AnkiUtils.getModelFields(modelId, context);
-            if (fields != null) {
-                String[] fieldTypesDesc = {
-                    context.getString(R.string.preference_anki_fields_expression),
-                        context.getString(R.string.preference_anki_fields_reading),
-                        context.getString(R.string.preference_anki_fields_definition),
-                        context.getString(R.string.preference_anki_fields_unused)
-                };
-                String[] fieldTypesInt = {
-                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_EXPRESSION_INT),
-                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_READING_INT),
-                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_DEFINITION_INT),
-                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT)
-                };
-                fieldPrefScreen.setEnabled(true);
-                for (int i = 0; i < fields.length; i++) {
-                    ListPreference listPref = new ListPreference(context);
-                    listPref.setKey(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_PREFIX + modelName + "_" + fields[i]);
-                    listPref.setTitle(fields[i]);
-                    listPref.setDialogTitle(fields[i]);
-                    listPref.setEntries(fieldTypesDesc);
-                    listPref.setEntryValues(fieldTypesInt);
-                    listPref.setDefaultValue((i < fieldTypesInt.length) ? fieldTypesInt[i] : String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT));
-                    fieldPrefScreen.addPreference(listPref);
-                }
-            }
-        }
+        setFieldPreferences(modelName);
 
         CheckBoxPreference confirmPref = new CheckBoxPreference(context);
         confirmPref.setKey(PreferencesController.PREFERENCE_ANKI_CONFIRM_SEND);
@@ -103,6 +79,50 @@ public class AnkiSettingsFragment extends ExtendedPreferenceFragment  {
         prefScreen.addPreference(fieldPrefScreen);
         prefScreen.addPreference(confirmPref);
         setPreferenceScreen(prefScreen);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object selectedModelName) {
+        setFieldPreferences((String) selectedModelName);
+        return true;
+    }
+
+    private void setFieldPreferences(String modelName) {
+        Context context = getActivity();
+        long modelId = AnkiUtils.getModelID(modelName, context);
+        if (modelId >= 0) {
+            String[] fields = AnkiUtils.getModelFields(modelId, context);
+            if (fields != null) {
+                String[] fieldTypesDesc = {
+                        context.getString(R.string.preference_anki_fields_expression),
+                        context.getString(R.string.preference_anki_fields_reading),
+                        context.getString(R.string.preference_anki_fields_definition),
+                        context.getString(R.string.preference_anki_fields_example_sentence),
+                        context.getString(R.string.preference_anki_fields_unused)
+                };
+                String[] fieldTypesInt = {
+                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_EXPRESSION_INT),
+                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_READING_INT),
+                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_DEFINITION_INT),
+                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_EXAMPLE_SENTENCE_INT),
+                        String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT)
+                };
+                fieldPrefScreen.setEnabled(true);
+                fieldPrefScreen.removeAll();
+                for (int i = 0; i < fields.length; i++) {
+                    ListPreference listPref = new ListPreference(context);
+                    listPref.setKey(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_PREFIX + modelName + "_" + fields[i]);
+                    listPref.setTitle(fields[i]);
+                    listPref.setDialogTitle(fields[i]);
+                    listPref.setEntries(fieldTypesDesc);
+                    listPref.setEntryValues(fieldTypesInt);
+                    listPref.setDefaultValue((i < fieldTypesInt.length) ? fieldTypesInt[i] : String.valueOf(PreferencesController.PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT));
+                    fieldPrefScreen.addPreference(listPref);
+                }
+            }
+        } else {
+            fieldPrefScreen.setEnabled(false);
+        }
     }
 
 }

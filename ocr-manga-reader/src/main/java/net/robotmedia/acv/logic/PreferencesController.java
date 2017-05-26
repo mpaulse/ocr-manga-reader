@@ -55,6 +55,7 @@ public class PreferencesController
   public static final int PREFERENCE_ANKI_MODEL_FIELD_READING_INT = 1;
   public static final int PREFERENCE_ANKI_MODEL_FIELD_DEFINITION_INT = 2;
   public static final int PREFERENCE_ANKI_MODEL_FIELD_UNUSED_INT = 3;
+  public static final int PREFERENCE_ANKI_MODEL_FIELD_EXAMPLE_SENTENCE_INT = 4;
 
   private SharedPreferences preferences;
 

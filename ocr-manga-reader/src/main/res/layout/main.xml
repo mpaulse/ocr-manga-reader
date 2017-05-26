@@ -34,8 +34,9 @@
                 android:id="@+id/main_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
         </RelativeLayout>
 
         <LinearLayout
@@ -166,34 +167,7 @@
             android:onClick="btnOcrSwapNudgeCorner_Clicked"
             style="@style/Theme.OcrButton"
             android:visibility="gone" />
-        
-        <Button
-            android:id="@+id/btn_ocr_send"
-            android:layout_width="60dip"
-            android:layout_height="40dip"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="-4dp"
-            android:layout_toLeftOf="@+id/btn_ocr_lookup_next"
-            android:text="@string/btn_ocr_send" 
-            android:onClick="btnOcrSend_Clicked"
-            android:scaleType="center"
-            android:textSize="13sp"
-            style="@style/Theme.OcrButton"
-            android:visibility="gone" />
-                
-        <Button
-            android:id="@+id/btn_ocr_lookup_next"
-            android:layout_width="60dip"
-            android:layout_height="35dip"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:text="@string/btn_ocr_lookup_next" 
-            android:onClick="btnOcrLookupNext_Clicked"
-            android:scaleType="center"
-            android:textSize="13sp"
-            style="@style/Theme.OcrButton"
-            android:visibility="gone" />
-        
+
         <Button
             android:id="@+id/btn_ocr_lookup_prev"
             android:layout_width="60dip"
@@ -201,18 +175,46 @@
             android:layout_marginRight="-4dp"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/btn_ocr_lookup_next"
-            android:text="@string/btn_ocr_lookup_prev" 
+            android:text="@string/btn_ocr_lookup_prev"
             android:onClick="btnOcrLookupPrev_Clicked"
             android:scaleType="center"
             android:textSize="13sp"
             style="@style/Theme.OcrButton"
             android:visibility="gone" />
-        
+
+        <Button
+            android:id="@+id/btn_ocr_lookup_next"
+            android:layout_width="60dip"
+            android:layout_height="35dip"
+            android:layout_marginRight="-4dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/btn_ocr_send"
+            android:text="@string/btn_ocr_lookup_next"
+            android:onClick="btnOcrLookupNext_Clicked"
+            android:scaleType="center"
+            android:textSize="13sp"
+            style="@style/Theme.OcrButton"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_ocr_send"
+            android:layout_width="60dip"
+            android:layout_height="35dip"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="-4dp"
+            android:layout_toLeftOf="@+id/btn_ocr_exit"
+            android:text="@string/btn_ocr_send" 
+            android:onClick="btnOcrSend_Clicked"
+            android:scaleType="center"
+            android:textSize="13sp"
+            style="@style/Theme.OcrButton"
+            android:visibility="gone" />
+
          <Button
             android:id="@+id/btn_ocr_exit"
             android:layout_width="60dip"
-            android:layout_height="40dip"
-            android:layout_alignParentBottom="true"
+            android:layout_height="35dip"
+            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:text="@string/btn_ocr_exit" 
             android:onClick="btnOcrExit_Clicked"
@@ -225,9 +227,8 @@
             android:id="@+id/btn_ocr_menu"
             android:layout_width="60dip"
             android:layout_height="40dip"
-            android:layout_marginRight="-4dp"
             android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/btn_ocr_exit"
+            android:layout_alignParentRight="true"
             android:text="@string/btn_ocr_menu" 
             android:onClick="btnOcrMenu_Clicked"
             android:scaleType="center"

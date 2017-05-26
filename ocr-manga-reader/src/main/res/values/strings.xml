@@ -159,6 +159,7 @@
     <string name="preference_anki_fields_expression">Japanese Expression</string>
     <string name="preference_anki_fields_reading">Reading</string>
     <string name="preference_anki_fields_definition">Definition</string>
+    <string name="preference_anki_fields_example_sentence">Example Sentence</string>
     <string name="preference_anki_fields_unused">Leave blank</string>
     <string name="preference_anki_confirm_send_title">Show card creation dialog</string>
     <string name="preference_anki_confirm_send_summary">Show an add/edit dialog before sending cards to Anki.</string>
